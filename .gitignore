@@ -1,0 +1,7 @@
+# ビルド成果物(./build.sh で再生成)
+dist/
+# wrangler の作業ファイル
+.wrangler/
+# Wix から保存した参照用ファイル(サイズが大きく、必要な画像は site/ に取り込み済み)
+reference/
+.DS_Store

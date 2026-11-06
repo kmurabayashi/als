@@ -1,0 +1,257 @@
+/* Agile Leadership Summit テーマ
+   旧 Wix サイト(agileleadershipsummit.org/home-1)のトンマナに合わせる:
+   白基調・ティール #4FBFB7 のアクセント・Raleway の細身見出し・角丸なし */
+.theme-als {
+  --bg: #ffffff;
+  --bg-alt: #f0f7f9;
+  --text: #191919;
+  --muted: #678489;
+  --accent: #4fbfb7;
+  --accent-strong: #2f8f88; /* 白背景上の文字リンク用(コントラスト確保) */
+  --accent-ink: #ffffff;
+  --hero-bg: #344245;
+  --hero-text: #ffffff;
+  --line: #e3e9ea;
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: .02em;
+  color-scheme: light; /* 元サイトに合わせてライト固定 */
+  background: var(--bg);
+  color: var(--text);
+}
+
+.theme-als a { color: var(--accent-strong); }
+.theme-als strong { font-weight: 500; }
+
+/* nav: 白い帯 + 細字 */
+.theme-als .nav {
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  border-bottom: 1px solid var(--line);
+}
+.theme-als .logo { font-family: Raleway, "Noto Sans JP", sans-serif; font-weight: 600; color: var(--text); letter-spacing: .08em; }
+.theme-als .logo span { color: var(--accent); }
+.theme-als .nav nav a { color: var(--text); opacity: .7; font-family: Raleway, "Noto Sans JP", sans-serif; letter-spacing: .04em; }
+.theme-als .nav nav a:hover,
+.theme-als .site-nav a[aria-current="page"] { opacity: 1; color: var(--accent-strong); }
+.theme-als .site-nav a[aria-current="page"] { border-bottom-color: var(--accent); }
+
+/* hero: 会場写真 + 暗めのオーバーレイ */
+.theme-als .hero {
+  background:
+    linear-gradient(rgba(25, 32, 34, .62), rgba(25, 32, 34, .62)),
+    url("/images/als-hero.jpg") center / cover no-repeat,
+    var(--hero-bg);
+  padding: 120px 0 104px;
+  text-align: center;
+}
+.theme-als .hero .eyebrow { color: var(--hero-text); opacity: .85; letter-spacing: .3em; font-family: Raleway, sans-serif; font-weight: 500; }
+.theme-als .hero h1 {
+  font-family: Raleway, "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  letter-spacing: .02em;
+  font-size: clamp(36px, 7vw, 72px);
+  line-height: 1.2;
+}
+.theme-als .hero .lead { font-weight: 300; }
+.theme-als .facts { justify-content: center; }
+.theme-als .facts dt { font-family: Raleway, sans-serif; text-transform: uppercase; letter-spacing: .2em; font-size: 11px; }
+.theme-als .facts dd { font-weight: 400; }
+
+/* buttons: 角なし・ティール */
+.theme-als .btn {
+  border-radius: 0;
+  padding: 14px 36px;
+  font-family: Raleway, "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  letter-spacing: .1em;
+  color: var(--accent-ink);
+  background: var(--accent);
+  transition: background .15s;
+}
+.theme-als .btn:hover { background: var(--accent-strong); }
+.theme-als .btn.ghost { background: transparent; color: var(--accent-strong); border: 1px solid var(--accent); }
+.theme-als .btn.ghost:hover { background: var(--accent); color: var(--accent-ink); }
+
+/* section 見出し: 英字ラベル + 和文 + ティールの短線(中央揃え) */
+.theme-als .section { padding: 96px 0; }
+.theme-als .section-head { text-align: center; margin: 0 0 48px; }
+.theme-als .section-label {
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
+  font-size: clamp(28px, 4.5vw, 40px);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.theme-als .section-head h2 {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--muted);
+  margin: 8px 0 0;
+  letter-spacing: .1em;
+}
+.theme-als .section-head h2 small { font-size: 13px; }
+.theme-als .section-head::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--accent);
+  margin: 20px auto 0;
+}
+
+/* cards / table / talks: 角なし・細線 */
+.theme-als .card,
+.theme-als .talk,
+.theme-als .callout { border-radius: 0; }
+.theme-als .card { background: var(--bg); border-top: 2px solid var(--accent); }
+.theme-als .card h3 { font-family: Raleway, "Noto Sans JP", sans-serif; letter-spacing: .1em; }
+.theme-als .info th { font-weight: 400; }
+
+/* schedule: 英字ラベル + 時刻 */
+.theme-als .timeline { border-left-color: var(--accent); }
+.theme-als .timeline time { font-family: Raleway, sans-serif; font-weight: 600; color: var(--accent-strong); }
+.theme-als .timeline .tl-label { display: block; font-family: Raleway, sans-serif; font-weight: 600; letter-spacing: .15em; font-size: 13px; text-transform: uppercase; }
+
+/* keynote: 縦長写真 */
+.theme-als .talk { border: none; background: transparent; padding: 0; }
+.theme-als .keynote { display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: start; }
+.theme-als .keynote img { width: 100%; height: auto; display: block; }
+.theme-als .keynote .speaker-role { font-family: Raleway, sans-serif; font-size: 13px; letter-spacing: .08em; color: var(--muted); margin: 0 0 4px; }
+.theme-als .keynote .speaker-en { font-family: Raleway, sans-serif; font-weight: 300; font-size: 28px; letter-spacing: .15em; margin: 0 0 4px; }
+.theme-als .keynote .speaker-name { font-weight: 500; }
+@media (max-width: 640px) {
+  .theme-als .keynote { grid-template-columns: 1fr; gap: 24px; }
+  .theme-als .keynote img { max-width: 200px; }
+}
+
+/* communities */
+.theme-als .tags { justify-content: center; }
+.theme-als .tags li { border-radius: 0; font-weight: 400; }
+.theme-als .tags a { color: var(--text); }
+.theme-als .tags a:hover { color: var(--accent-strong); }
+
+.theme-als .center { text-align: center; }
+
+/* footer */
+.theme-als .footer { text-align: center; font-size: 13px; letter-spacing: .05em; }
+
+/* Women in Agile: wiajapan.org と同じ Wix テンプレート。アクセントは同サイトのボタン色(スチールブルー) */
+.theme-als.theme-wia {
+  --accent: #4682b4;
+  --accent-strong: #36678f;
+  --bg-alt: #f1f5f9;
+  --muted: #5f7385;
+  --line: #e2e8ee;
+}
+.theme-wia .hero {
+  background:
+    linear-gradient(rgba(20, 30, 42, .58), rgba(20, 30, 42, .58)),
+    url("/images/wia-hero.jpg") center 30% / cover no-repeat,
+    var(--hero-bg);
+}
+
+/* 姉妹イベントへの相互リンク */
+.sister { display: grid; grid-template-columns: 1fr auto; gap: 16px 32px; align-items: center; padding: 32px; border: 1px solid var(--line); border-left: 4px solid var(--sister-accent, var(--accent)); background: var(--bg); }
+.sister p { margin: 0; }
+.sister .sister-label { font-family: Raleway, sans-serif; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.sister .sister-title { font-family: Raleway, "Noto Sans JP", sans-serif; font-size: 24px; font-weight: 400; letter-spacing: .04em; margin: 4px 0 8px; }
+.sister .btn { background: var(--sister-accent, var(--accent)); }
+.sister .btn:hover { filter: brightness(.9); background: var(--sister-accent, var(--accent)); }
+.sister.to-wia { --sister-accent: #4682b4; }
+.sister.to-als { --sister-accent: #4fbfb7; }
+@media (max-width: 640px) { .sister { grid-template-columns: 1fr; padding: 24px; } }
+
+/* 2日間スケジュール */
+.theme-als .days { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; }
+.theme-als .day-title { font-family: Raleway, sans-serif; font-weight: 300; font-size: 28px; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 16px; color: var(--accent-strong); }
+.theme-als .timeline small { display: block; color: var(--muted); font-size: 13px; }
+.theme-als .principles { margin: 8px 0 0; padding-left: 1.2em; font-size: 14px; color: var(--muted); }
+
+/* WIA Japan Group */
+.theme-als .vision { text-align: center; font-size: clamp(20px, 3vw, 26px); font-weight: 400; letter-spacing: .08em; margin: 0 0 48px; }
+.theme-als .people { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px 24px; }
+.theme-als .people li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.theme-als .people span { display: block; font-family: Raleway, sans-serif; font-size: 12px; letter-spacing: .08em; color: var(--muted); }
+.theme-als .sub-label { font-family: Raleway, sans-serif; letter-spacing: .2em; text-transform: uppercase; font-size: 13px; color: var(--muted); text-align: center; margin: 56px 0 20px; }
+.theme-als .day-title small { font-size: 14px; letter-spacing: .1em; color: var(--muted); margin-left: 8px; text-transform: none; }
+.theme-als .keynote-noimg { grid-template-columns: 1fr; max-width: 760px; margin: 32px auto 40px; }
+
+/* ===== グローバルナビ(gnav)+「過去イベント」プルダウン ===== */
+.theme-als .nav nav.gnav { display: flex; align-items: center; gap: 20px; overflow: visible; }
+.theme-als .nav-inner { height: 56px; flex-wrap: nowrap; }
+.theme-als .dropdown { position: relative; }
+.theme-als .dropdown summary {
+  list-style: none; cursor: pointer; font-size: 14px; white-space: nowrap;
+  font-family: Raleway, "Noto Sans JP", sans-serif; letter-spacing: .04em; color: var(--text);
+}
+.theme-als .dropdown summary::-webkit-details-marker { display: none; }
+.theme-als .dropdown summary::after { content: ""; display: inline-block; width: 6px; height: 6px; margin: 0 0 3px 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); transition: transform .15s; }
+.theme-als .dropdown[open] summary::after { transform: rotate(-135deg); margin-bottom: -1px; }
+.theme-als .dropdown summary:hover { color: var(--accent-strong); }
+.theme-als .dropdown ul {
+  position: absolute; right: 0; top: calc(100% + 18px); z-index: 30;
+  list-style: none; margin: 0; padding: 8px 0; min-width: 260px;
+  background: var(--bg); border: 1px solid var(--line); border-top: 2px solid var(--accent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+}
+.theme-als .nav .dropdown a { display: block; padding: 10px 20px; opacity: 1; color: var(--text); white-space: nowrap; font-size: 14px; }
+.theme-als .nav .dropdown a:hover { background: var(--bg-alt); color: var(--accent-strong); }
+.theme-als .nav .dropdown a[aria-current="page"] { color: var(--accent-strong); }
+.theme-als .dropdown a small { display: block; font-size: 12px; color: var(--muted); letter-spacing: .05em; }
+@media (max-width: 640px) {
+  .theme-als .nav-inner { padding-top: 0; padding-bottom: 0; }
+  .theme-als .gnav .nav-anchor { display: none; }
+  .theme-als .dropdown ul { right: -16px; min-width: 240px; }
+}
+
+/* 過去イベントであることを示す帯 */
+.theme-als .archive-bar { background: var(--bg-alt); border-bottom: 1px solid var(--line); font-size: 13px; padding: 8px 0; text-align: center; color: var(--muted); }
+.theme-als .archive-bar a { font-weight: 500; }
+
+/* 写真付きキーノート一覧 */
+.theme-als .speakers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px 32px; margin-top: 40px; }
+.theme-als .speakers article { text-align: left; }
+.theme-als .speakers img { width: 100%; aspect-ratio: 6 / 5; object-fit: cover; display: block; margin-bottom: 16px; }
+.theme-als .speakers .speaker-role { font-family: Raleway, sans-serif; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-strong); margin: 0 0 4px; }
+.theme-als .speakers .speaker-name { font-size: 18px; margin: 0 0 4px !important; }
+.theme-als .speakers .speaker-org { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+.theme-als .speakers .talk-title { font-weight: 500; margin: 0 0 8px; }
+.theme-als .speakers .bio { margin: 0; }
+
+/* ロゴ一覧(スポンサー・協力コミュニティ) */
+.theme-als .logos { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+.theme-als .logos li { background: #fff; border: 1px solid var(--line); display: grid; place-items: center; padding: 16px; aspect-ratio: 3 / 2; }
+.theme-als .logos img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.theme-als .bio + .bio { margin-top: 8px; }
+/* キーノートが 1 人のとき:写真を左に、文章を右に */
+.theme-als .speakers > article:only-child { display: flow-root; }
+.theme-als .speakers > article:only-child img { float: left; width: 240px; aspect-ratio: auto; margin: 0 40px 16px 0; }
+@media (max-width: 640px) {
+  .theme-als .speakers > article:only-child img { float: none; width: 100%; max-width: 280px; margin: 0 0 16px; }
+}
+
+/* EAF 2024:元ページの会議写真をヒーローに */
+.theme-als .hero.hero-eaf2024 {
+  background:
+    linear-gradient(rgba(25, 32, 34, .6), rgba(25, 32, 34, .6)),
+    url("/images/eaf2024/hero.jpg") center / cover no-repeat,
+    var(--hero-bg);
+}
+.theme-als .hero .hero-text { max-width: 760px; margin: 0 auto 32px; font-size: 15px; opacity: .9; text-align: left; }
+
+/* ロゴ+名前のカード(ALS 2019 の協力コミュニティ) */
+.theme-als .logos.captioned li { aspect-ratio: auto; padding: 0; }
+.theme-als .logos.captioned li > a,
+.theme-als .logos.captioned li > img { display: block; }
+.theme-als .logos.captioned li > a, .theme-als .logos.captioned li { color: var(--text); text-decoration: none; }
+.theme-als .logos.captioned li > a { width: 100%; height: 100%; }
+.theme-als .logos.captioned img { display: block; height: 80px; width: 100%; object-fit: contain; padding: 16px 16px 0; box-sizing: border-box; }
+.theme-als .logos.captioned span { display: block; padding: 10px 12px 14px; font-size: 13px; line-height: 1.5; text-align: center; }
+.theme-als .logos.captioned li:has(a):hover { border-color: var(--accent); }
+.theme-als .cohost { text-align: center; margin-bottom: 8px; }
+.theme-als .cohost .sub-label { margin-top: 0; }
+.theme-als .cohost img { width: 180px; height: auto; }
+.theme-als .cohost p:last-child { margin: 4px 0 0; font-size: 14px; }
